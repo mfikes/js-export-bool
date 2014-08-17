@@ -18,3 +18,9 @@ When you launch the app, it will log output to the console like this when 32-bit
     2014-08-17 12:23:28.696 JSExportBOOL[23099:60b] JSC: boolean
 
 The first 4 lines show the results of accessing a true and false BOOL property (logging the value and its type). The subsequent 4 lines show similar results of accessing a JSValue property that is explicitly created using `valueWithBool`.
+
+The header documentation for `JSExport.h` (http://opensource.apple.com/source/JavaScriptCore/JavaScriptCore-7537.65/API/JSExport.h) indicates:
+
+    BOOL: values are converted consistently with valueWithBool/toBool.
+    
+So this appears to be a defect in the 32-bit JavaScriptCore iOS integration.
